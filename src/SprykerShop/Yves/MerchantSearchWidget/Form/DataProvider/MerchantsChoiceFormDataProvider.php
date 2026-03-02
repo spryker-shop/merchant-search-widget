@@ -36,9 +36,6 @@ class MerchantsChoiceFormDataProvider
      */
     protected $merchantSearchClient;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantSearchWidget\Dependency\Client\MerchantSearchWidgetToMerchantSearchClientInterface $merchantSearchClient
-     */
     public function __construct(MerchantSearchWidgetToMerchantSearchClientInterface $merchantSearchClient)
     {
         $this->merchantSearchClient = $merchantSearchClient;

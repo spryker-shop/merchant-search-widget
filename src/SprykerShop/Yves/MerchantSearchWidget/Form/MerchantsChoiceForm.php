@@ -44,9 +44,6 @@ class MerchantsChoiceForm extends AbstractType
         $this->addMerchantReferenceField($builder, $options);
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return '';
@@ -73,11 +70,6 @@ class MerchantsChoiceForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_MERCHANTS);

@@ -21,25 +21,16 @@ class MerchantSearchWidget extends AbstractWidget
         $this->addParameter('merchantForm', $this->getMerchantForm());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'MerchantSearchWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@MerchantSearchWidget/views/merchant-search/merchant-search.twig';
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getMerchantForm(): FormView
     {
         $shopContextTransfer = $this->getFactory()->getShopContext();

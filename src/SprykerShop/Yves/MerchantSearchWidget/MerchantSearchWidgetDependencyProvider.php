@@ -28,11 +28,6 @@ class MerchantSearchWidgetDependencyProvider extends AbstractBundleDependencyPro
      */
     public const CLIENT_MERCHANT_SEARCH = 'CLIENT_MERCHANT_SEARCH';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = $this->addMerchantSearchClient($container);
@@ -40,11 +35,6 @@ class MerchantSearchWidgetDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addMerchantSearchClient(Container $container): Container
     {
         $container->set(static::CLIENT_MERCHANT_SEARCH, function (Container $container) {

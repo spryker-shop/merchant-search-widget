@@ -23,25 +23,16 @@ use Symfony\Component\Form\FormInterface;
  */
 class MerchantSearchWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\MerchantSearchWidget\Resolver\ShopContextResolverInterface
-     */
     public function createShopContextResolver(): ShopContextResolverInterface
     {
         return new ShopContextResolver($this->getContainer());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShopContextTransfer
-     */
     public function getShopContext(): ShopContextTransfer
     {
         return $this->createShopContextResolver()->resolve();
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactory
-     */
     public function getFormFactory(): FormFactory
     {
         return $this->getProvidedDependency(MerchantSearchWidgetDependencyProvider::FORM_FACTORY);
@@ -57,25 +48,16 @@ class MerchantSearchWidgetFactory extends AbstractFactory
         return $this->getFormFactory()->create(MerchantsChoiceForm::class, null, $options);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantSearchWidget\Form\DataProvider\MerchantsChoiceFormDataProvider
-     */
     public function createMerchantsChoiceFormDataProvider(): MerchantsChoiceFormDataProvider
     {
         return new MerchantsChoiceFormDataProvider($this->getMerchantSearchClient());
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createMerchantsHiddenForm(): FormInterface
     {
         return $this->getFormFactory()->create(MerchantsSearchForm::class);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantSearchWidget\Dependency\Client\MerchantSearchWidgetToMerchantSearchClientInterface
-     */
     public function getMerchantSearchClient(): MerchantSearchWidgetToMerchantSearchClientInterface
     {
         return $this->getProvidedDependency(MerchantSearchWidgetDependencyProvider::CLIENT_MERCHANT_SEARCH);
